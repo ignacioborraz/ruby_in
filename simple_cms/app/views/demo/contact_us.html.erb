@@ -1,0 +1,8 @@
+<h1>CONTACT US</h1>
+<h3><%= "COUNTRY: #{@country}" %></h3>
+<h3><%= "PHONE: #{@phone}" %></h3>
+
+<br>
+<%= link_to("to index",{ action: 'index' }) %>
+<%= link_to("to products",{ :controller=> 'product',:action=> 'index' }) %>
+<%= link_to("to about",{ action: 'about' }) %>

@@ -1,0 +1,12 @@
+<h1>Esta es la vista con todos los productos</h1>
+
+<% 10.times do |n| %>
+    <p><%= "product n°#{n}" %></p>
+    <%= link_to("+info",{
+        action: 'detail',   #no es necesario controller cuando es del mismo controller
+        static: 'static',   #parámetro estatico (puede tener cualquier nombre)
+        id:n                #parámetro estático
+    }) %>
+<% end %>
+<br>
+<%= link_to("to index",{ :controller=> 'demo', :action=> 'index' }) %>

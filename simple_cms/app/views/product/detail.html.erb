@@ -1,0 +1,9 @@
+<h1>DETAILS</h1>
+<h4>
+    <%= "product #{@id}" %>
+</h4>
+<p>
+    <%= "this is an #{@static} param" %>
+</p>
+<%= link_to("go back",{ action: 'index' }) %>
+<%= link_to("to index",{ :controller=> 'demo', :action=> 'index' }) %>

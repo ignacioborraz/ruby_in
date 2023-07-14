@@ -1,0 +1,17 @@
+para crear una app: rails new simple_cms -d
+para instalar las gemas: bundle install
+para iniciar el servidor: rails server
+
+mysql -u root -p //para loguearse en mysql
+//ingreso la contraseña
+
+SHOW DATABASES;
+CREATE DATABASE simple_cms_development;
+SELECT host, user FROM mysql.user; //para ver los uusario disponibles
+CREATE USER 'rails_user'@'localhost' IDENTIFIED BY '1234'; //para crear un usuario en caso de ser necesario
+GRANT ALL PRIVILEGES ON simple_cms_development.* TO 'rails_user'@'localhost'; //para ceder los permisos a determinado usuario
+
+luego en /config/database.yml cabiamos el username y el password de la default
+
+para ver que se puede generar: rails generate
+para ver que tipo de controller generar: rails generate controller

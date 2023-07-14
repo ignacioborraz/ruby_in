@@ -1,0 +1,11 @@
+<% title = 'RUBY' %>
+<h1><%= "HELLO #{title} APPRENTICE" %></h1>
+
+<a href="/demo/array">to array</a>
+<%= link_to("to hello",{ :action=> 'hello' }) %>
+<%= link_to("to about",{ action: 'about' }) %>
+<%= link_to("to products",{ :controller=> 'product', :action=> 'index' }) %>
+<br>
+<%= link_to("US contact",{ action: 'contact', country: 'US' }) %>
+<%= link_to("UK contact",{ action: 'contact', country: 'UK' }) %>
+<%= link_to("contact",{ action: 'contact' }) %>
