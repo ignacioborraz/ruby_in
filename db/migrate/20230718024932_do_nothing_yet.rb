@@ -1,4 +1,9 @@
 class DoNothingYet < ActiveRecord::Migration[7.0]
-  def change
+  
+  def up
   end
+
+  def down
+  end
+
 end

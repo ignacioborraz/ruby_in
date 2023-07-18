@@ -21,4 +21,22 @@ para crear una migracion:
 rails generate migration DoNothingYet
 
 para crear un modelo:
-rails generate model
+rails generate model User (opcional:) first_name:string last_name:string email:string
+
+para ver la base de datos desde rails
+mysql -u root -p simple
+
+para ver las columnas de la tabla
+SHOW FIELDS FROM users;
+
+para ver las migraciones
+SELECT * FROM schema_migrations;
+
+para ver el estado de las migraciones:
+rails db:migrate:status
+
+para 'borrar' las migraciones
+rails db:migrate VERSION=0
+para 'borrar' las migraciones
+rails db:migrate VERSION=20230718173914 (migracion)
+
