@@ -7,6 +7,7 @@ mysql -u root -p //para loguearse en mysql
 
 SHOW DATABASES;
 CREATE DATABASE simple_cms_development;
+USE simple;
 SELECT host, user FROM mysql.user; //para ver los uusario disponibles
 CREATE USER 'rails_user'@'localhost' IDENTIFIED BY '1234'; //para crear un usuario en caso de ser necesario
 GRANT ALL PRIVILEGES ON simple_cms_development.* TO 'rails_user'@'localhost'; //para ceder los permisos a determinado usuario
@@ -15,3 +16,9 @@ luego en /config/database.yml cabiamos el username y el password de la default
 
 para ver que se puede generar: rails generate
 para ver que tipo de controller generar: rails generate controller
+
+para crear una migracion:
+rails generate migration DoNothingYet
+
+para crear un modelo:
+rails generate model
