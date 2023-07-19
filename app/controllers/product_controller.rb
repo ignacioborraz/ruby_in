@@ -7,4 +7,5 @@ class ProductController < ApplicationController
     @id = params['id']
     @static = params[:static]
   end
+
 end

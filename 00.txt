@@ -11,6 +11,11 @@ USE simple;
 SELECT host, user FROM mysql.user; //para ver los uusario disponibles
 CREATE USER 'rails_user'@'localhost' IDENTIFIED BY '1234'; //para crear un usuario en caso de ser necesario
 GRANT ALL PRIVILEGES ON simple_cms_development.* TO 'rails_user'@'localhost'; //para ceder los permisos a determinado usuario
+pk=primary key = id
+fk=foreign key = id de la tabla con la que se relaciona
+teacher HAS MANY courses
+course BELONGS TO a teacher
+course tiene la fk = teacher_id
 
 luego en /config/database.yml cabiamos el username y el password de la default
 
@@ -32,6 +37,9 @@ SHOW FIELDS FROM users;
 para ver las migraciones
 SELECT * FROM schema_migrations;
 
+para enviar las migraciones
+rails db:migrate
+
 para ver el estado de las migraciones:
 rails db:migrate:status
 
@@ -40,3 +48,56 @@ rails db:migrate VERSION=0
 para 'borrar' las migraciones
 rails db:migrate VERSION=20230718173914 (migracion)
 
+CREATE
+user - User.new
+user.first_name = 'igna'
+user.save
+user.new_record (true si es nuevo y no fue agregado a la bd)
+subject = Subject.create(:name=>'name', :visible=>true, :order=>4)
+
+READ
+user = User.find(1)
+users = User.where(first_name:'igna')
+users = User.where(:first_name=>'igna').first
+users = User.where("first_name='igna' AND visible=true")
+users = users.order('last_name ASC').offset(2).limit(5)
+users.each {|user| .......}
+
+UPDATE
+user = User.find(1)
+user.last_name = 'borraz'
+user.save
+user.update(:position=>5)
+
+DESTROY
+user = User.find(1)
+user.destroy
+
+para iniciar la consola de ruby
+irb
+
+para iniciar la consola de rails
+rails console
+
+para trabajar en la consola en ambiente de desarrollador 
+rails console -e development
+
+para configurar relaciones
+teacher HAS MANY courses
+    class Teacher
+        has_many: pages (plural)
+    end
+course BELONGS TO a teacher
+    class Course
+        belongs_to: subject (singular)
+    end
+course tiene la fk = teacher_id
+
+para ver todos los cursos de un profesor
+teacher.courses
+para agregar un curso a un profesor
+teacher.courses << course
+para ver si un profesor tiene cursos
+teacher.courses.empty?
+para ver cuantas relaciones tiene
+teacher.courses.size
