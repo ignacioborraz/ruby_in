@@ -6,6 +6,8 @@
 <%= link_to("to about",{ action: 'about' }) %>
 <%= link_to("to products",{ :controller=> 'product', :action=> 'index' }) %>
 <br>
+<%= link_to('All subjects', subjects_path) %>
+<br>
 <%= link_to("US contact",{ action: 'contact', country: 'US' }) %>
 <%= link_to("UK contact",{ action: 'contact', country: 'UK' }) %>
 <%= link_to("contact",{ action: 'contact' }) %>

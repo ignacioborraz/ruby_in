@@ -101,3 +101,25 @@ para ver si un profesor tiene cursos
 teacher.courses.empty?
 para ver cuantas relaciones tiene
 teacher.courses.size
+
+CRUD controllers (model en plural)
+sudo rails g controller Pages index show new edit delete
+
+para crear todos los endpoints de un modelo
+  resources :subjects
+
+para crear todo menos alguno
+  recources :subjects, :except=> [:show, :destroy] 
+
+para crear solo alguno
+  recources :subjects, :only=> [:index, :update]
+
+algunos no vienen por default, los agrego para uno o para todos
+  resources :subjects do
+    member do
+      get :delete
+    end
+    collection do
+      get :export
+    end
+  end

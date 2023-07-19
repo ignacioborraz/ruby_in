@@ -1,4 +1,32 @@
 Rails.application.routes.draw do
+
+  #get 'pages/index'
+  #get 'pages/show'
+  #get 'pages/new'
+  #get 'pages/create'
+  #get 'pages/edit'
+  #get 'pages/update'
+  #get 'pages/destroy'
+  #get 'pages/delete'
+
+  resources :subjects do
+    member do
+      get :delete
+    end
+    collection do
+      get :export
+    end
+  end
+
+  resources :pages do
+    member do
+      get :delete
+    end
+    collection do
+      get :export
+    end
+  end
+    
   
   get 'demo/index'
   get 'demo/hello'
