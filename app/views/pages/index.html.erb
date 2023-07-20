@@ -1,7 +1,7 @@
 <div class="pages index">
   <h2>Pages from Subject <%= @subject_id %></h2>
 
-  <%= link_to("Add New Page", new_page_path, :class => 'action new') %>
+  <%= link_to("Add New Page", new_page_path(:subject_id=> @subject_id), :class => 'action new') %>
 
   <table class="listing" summary="Page list">
     <tr class="header">
@@ -18,7 +18,7 @@
       <td><%= page.name %></td>
       <td class="center"><%= page.visible ? 'Yes' : 'No' %></td>
       <td class="actions">
-        <%= link_to("Show", page_path(page), :class => 'action show') %>
+        <%= link_to("Show", page_path(page,{subject_id: @subject_id}), :class => 'action show') %>
         <%= link_to("Edit", edit_page_path(page), :class => 'action edit') %>
         <%= link_to("Delete", delete_page_path(page), :class => 'action delete') %>
       </td>

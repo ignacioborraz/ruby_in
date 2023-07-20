@@ -59,6 +59,7 @@ READ
 user = User.find(1)
 users = User.where(first_name:'igna')
 users = User.where(:first_name=>'igna').first
+users = User.where(first_name:'igna', visible:true)
 users = User.where("first_name='igna' AND visible=true")
 users = users.order('last_name ASC').offset(2).limit(5)
 users.each {|user| .......}
