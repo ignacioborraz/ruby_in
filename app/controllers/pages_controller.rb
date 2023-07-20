@@ -1,6 +1,9 @@
 class PagesController < ApplicationController
 
   def index
+    @subject_id = params[:subject_id]
+    @subject = Subject.find(@subject_id)
+    @pages = @subject.pages
   end
 
   def show

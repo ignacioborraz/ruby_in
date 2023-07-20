@@ -123,3 +123,14 @@ algunos no vienen por default, los agrego para uno o para todos
       get :export
     end
   end
+
+mass assignment para convertir un array de propiedades en un objeto
+strong params es la forma de pasar paratros permitidos y requeridos
+  params.permit(:first_name, :last_name)
+  params.require(:subject)
+  params.require(:subject).permit(:first_name, :last_name)
+si se repite conviene programar un metodo privado
+  private
+    def subject_params
+      params.require(:subject).permit(:name, :visible, :position)
+    end

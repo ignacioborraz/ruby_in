@@ -1,5 +1,33 @@
-<h1>Decide what to do</h1>
-<h3><%= "#{@subject.name}" %></h3>
-<h3><%= "#{@subject.position}" %></h3>
-<h3><%= "#{@subject.visible}" %></h3>
-<%= link_to('EDIT', edit_subject_path(@id)) %>
+<%= link_to("<< Back to List", subjects_path, :class => 'back-link') %>
+
+<div class="subjects show">
+  <h2>Show Subject</h2>
+
+  <table summary="Subject detail view">
+    <tr>
+      <th>Name</th>
+      <td><%= @subject.name %></td>
+    </tr>
+    <tr>
+      <th>Position</th>
+      <td><%= @subject.position %></td>
+    </tr>
+    <tr>
+      <th>Visible?</th>
+      <td><%= @subject.visible ? 'true' : 'false' %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @subject.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @subject.updated_at %></td>
+    </tr>
+  </table>
+
+</div>
+
+<br>
+<br>
+<%= link_to("Go to pages from subject", {controller: 'pages', action: 'index', subject_id: @subject.id}) %>
